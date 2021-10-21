@@ -1,0 +1,292 @@
+/*css for brightwater*/
+body {
+    margin: 0 auto;
+    max-width: 1000px;
+    font-family: 'Noto Sans Display', sans-serif;
+    background-color: #ffffff; /*white*/
+}
+
+html{
+    background-color: #82AFDF; /*light blue*/
+}
+
+header{
+    background-color: #001c3a; /*dark blue*/
+    padding: 10px;
+    color: #ffffff; /*white*/
+    display: flex;
+    height: 40px;
+    align-items: center;
+}
+
+/*NAVAGATION START*/
+
+nav{
+    background-color: #16487e; /*blue*/
+    padding: 3px;
+    margin: 0;
+    display: flex;
+}
+
+nav li:hover{
+    background-color: #f6c64e; /*light orange*/
+}
+
+ul {
+    list-style: none;
+    justify-content: space-between; /*distrubutes the space between nav links evenly*/
+    max-width: 500px;
+    
+}
+
+nav a{
+    color: #ffffff; /*white*/
+    text-decoration: none;
+}
+
+/*dif-nav for the settings for the forum and sign in links since they are designed differently*/
+#dif-nav{
+    background-color: #f28a00; /*orange*/
+}
+
+#dif-nav:hover{
+    background-color: #f6c64e; /*light orange*/
+}
+
+/*NAVAGATION END*/
+
+/*BANNER START*/
+#banner-left{
+    display: flex;
+    background-color: #001c3a; /*dark blue*/
+    color: #ffffff; /*white*/
+    font-size: 40px;
+    max-height: 400px;
+    margin: 0;
+    width: 100%;
+}
+
+#banner-left img{
+    max-height: 400px;
+    max-width: 100%; /*means max-width will be proportioned based on max-height*/
+}
+
+#banner-left h3{
+    padding: 5px;
+}
+
+
+#banner{
+    display: flex;
+    height: 100px;
+    background-color: #001c3a; /*dark blue*/
+    margin: 0;
+}
+
+#banner h1{
+    font-size: 50px;
+    justify-content: center;
+    color: #ffffff; /*white*/
+}
+
+
+section{
+    margin: 10px;
+}
+
+
+#banner-right{
+    display: flex;
+    width: 100%;
+    max-height: 400px;
+    margin: 0;
+    background-color: #001c3a; /*dark blue*/
+    justify-content: flex-end; /*positions image on the right hand side of the screen*/
+    font-size: 40px;
+    color: #ffffff;
+    
+}
+
+#banner-right img{
+    max-height: 400px;
+    max-width: 100%;
+}
+
+#banner-right h3{
+    padding: 5px; /*ensures there is a little space between the text and image on large screens*/
+    
+}
+
+/*BANNER END*/
+
+/*FOOTER START*/
+
+footer{
+    background-color: #001c3a; /*dark blue*/
+    color: #ffffff; /*white*/
+    padding: 20px;
+    text-align: center;
+}
+
+footer a{
+    color: #ffffff; /*white*/
+    text-decoration: none;
+}
+footer a:hover{
+    color: #f6c64e; /*light orange*/
+}
+
+/*FOOTER END*/
+
+#map{
+    display: flex; /*enables map to adjust to screen size*/
+}
+
+/*SIGN IN START*/
+
+#sign-in-button{
+    background-color: #f28a00; /*orange*/
+    padding: 10px;
+    border-radius: 5px; /* rounds off edges of sign in button*/
+    text-align: center;
+    color: #ffffff; /*white*/
+    max-width: 500px; /*makes sure the sig in button never gets longer then 500px*/
+}
+
+#sign-in-button:hover{
+    background-color: #f6c64e; 
+    /*changes colour of the sign in button to a light orange when hovered over with a mouse this is also applied to all other links*/
+}
+
+#sign-in{
+    padding: 20px;
+}
+
+/*SIGN IN END*/
+
+/*BLOG START*/
+
+a #blog-link{
+    border: 2px solid #16487e; /*blue*/
+    border-radius: 5px;
+    width: 300px;
+    padding: 5px;
+}
+
+#blog-link img{
+    max-width: 300px;
+}
+
+#blog{
+    display: flex;
+    flex-wrap: wrap; /*makes the blog content lign up next to and under each other*/
+    justify-content: center;
+}
+
+/*BLOG END*/
+
+a{
+    text-decoration: none;
+    color: #000000; /*black*/ 
+    /* used for all none button text links like the forum and blog links*/
+}
+
+.contact{
+    padding: 10px;
+}
+
+
+#forum-links{
+    border: 2px solid #16487e; /*blue*/
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+#resource-links{
+    display: flex;
+    flex-wrap: wrap; /*makes all the links move under each other as the screen size shrinks*/
+    
+}
+#resource{
+    max-width: 450px;
+    padding: 5px;
+    border: 2px solid #16487e;
+    border-radius: 5px;
+}
+
+#resource img {
+    max-width: 450px;
+}
+
+/*SMALL SCREENS START*/
+@media screen and (max-width: 700px){
+    ul{ 
+        flex-wrap: wrap;
+        flex-direction: column; /*makes nav links align in one column*/
+    }
+    
+    li{
+        flex: 1 0 auto;
+        text-align: center;
+        padding: 9px;
+    }
+    
+    nav{
+        justify-content: center; /*centers the nav on the page*/
+    }
+    
+    nav li{
+        padding: 10px 50px;
+    }
+}
+
+
+/*SMALL SCREENS END*/
+
+
+/*MEDIUM SCREENS START*/
+/*used to prevent main banner text from being hidden when the screen gets smaller by putting it over the image*/
+@media screen and (max-width: 880px){
+    #banner-left img{
+        position: relative;
+    }
+
+    #banner-left h3{
+        position: absolute;
+        align-self: flex-end;
+    }    
+    
+    #banner-right img{
+        position: relative;
+    }
+    
+    #banner-right h3{
+        position: absolute; /*postions the text over the image*/
+        align-self: flex-end;
+    }
+
+}
+/*MEDIUM SCREENS END*/
+
+
+/*LARGE SCREENS START*/
+@media screen and (min-width: 701px){
+    
+    nav ul{
+        display: flex;
+        padding: 0;
+        margin: 0;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    nav li{
+        padding: 10px;
+    }
+    
+    
+}
+/*LARGE SCREENS END*/
+
