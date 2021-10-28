@@ -2,7 +2,8 @@
 body {
     margin: 0 auto;
     max-width: 1000px;
-    font-family: 'Noto Sans Display', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Lato', sans-serif;
     background-color: #ffffff; /*white*/
 }
 
@@ -23,19 +24,18 @@ header{
 
 nav{
     background-color: #16487e; /*blue*/
-    padding: 3px;
-    margin: 0;
+    margin: 0px;
     display: flex;
+    padding: 10px;
 }
 
-nav li:hover{
+nav a:hover{
     background-color: #f6c64e; /*light orange*/
 }
 
 ul {
     list-style: none;
     justify-content: space-between; /*distrubutes the space between nav links evenly*/
-    max-width: 500px;
     
 }
 
@@ -45,18 +45,23 @@ nav a{
 }
 
 /*dif-nav for the settings for the forum and sign in links since they are designed differently*/
-#dif-nav{
-    background-color: #f28a00; /*orange*/
+.dif-nav{
+    display: flex;
 }
 
-#dif-nav:hover{
+.dif-nav a:hover{
     background-color: #f6c64e; /*light orange*/
+}
+
+.dif-nav a{
+    background-color: #f28a00; /*orange*/
+    margin-left: 10px;
 }
 
 /*NAVAGATION END*/
 
 /*BANNER START*/
-#banner-left{
+.banner-left{
     display: flex;
     background-color: #001c3a; /*dark blue*/
     color: #ffffff; /*white*/
@@ -66,12 +71,12 @@ nav a{
     width: 100%;
 }
 
-#banner-left img{
+.banner-left img{
     max-height: 400px;
     max-width: 100%; /*means max-width will be proportioned based on max-height*/
 }
 
-#banner-left h3{
+.banner-left h3{
     padding: 5px;
 }
 
@@ -83,7 +88,7 @@ nav a{
     margin: 0;
 }
 
-#banner h1{
+#banner h2{
     font-size: 50px;
     justify-content: center;
     color: #ffffff; /*white*/
@@ -166,14 +171,14 @@ footer a:hover{
 
 /*BLOG START*/
 
-a #blog-link{
+a .blog-link{
     border: 2px solid #16487e; /*blue*/
     border-radius: 5px;
     width: 300px;
     padding: 5px;
 }
 
-#blog-link img{
+.blog-link img{
     max-width: 300px;
 }
 
@@ -196,27 +201,30 @@ a{
 }
 
 
-#forum-links{
+.forum-links{
     border: 2px solid #16487e; /*blue*/
     border-radius: 5px;
     padding-left: 5px;
 }
 
-#resource-links{
+/*RESOURCE START*/
+#resource{
     display: flex;
     flex-wrap: wrap; /*makes all the links move under each other as the screen size shrinks*/
-    
+    justify-content: center; 
 }
-#resource{
+
+.resource-links{
     max-width: 450px;
     padding: 5px;
     border: 2px solid #16487e;
     border-radius: 5px;
 }
 
-#resource img {
+.resource-links img {
     max-width: 450px;
 }
+/*RESOURCE START*/
 
 /*SMALL SCREENS START*/
 @media screen and (max-width: 700px){
@@ -225,36 +233,50 @@ a{
         flex-direction: column; /*makes nav links align in one column*/
     }
     
-    li{
+    nav li{
         flex: 1 0 auto;
         text-align: center;
         padding: 9px;
     }
     
-    nav{
-        justify-content: center; /*centers the nav on the page*/
+    nav a{
+        padding: 10px 40px;
     }
     
-    nav li{
-        padding: 10px 50px;
+    nav{
+        justify-content: center;
     }
+    
+    #resource{
+        justify-content: center;    
+    }
+    
+    .resource-links{
+    max-width: 300px;
+        
+    }
+
+    .resource-links img{
+    max-width: 300px;
+    }
+    
 }
-
-
 /*SMALL SCREENS END*/
 
 
 /*MEDIUM SCREENS START*/
 /*used to prevent main banner text from being hidden when the screen gets smaller by putting it over the image*/
 @media screen and (max-width: 880px){
-    #banner-left img{
+    .banner-left img{
         position: relative;
     }
 
-    #banner-left h3{
-        position: absolute;
+    .banner-left h3{
+        z-index: 999; /*makes sure text is infront of image*/
+        position: absolute; 
         align-self: flex-end;
     }    
+    
     
     #banner-right img{
         position: relative;
@@ -263,6 +285,7 @@ a{
     #banner-right h3{
         position: absolute; /*postions the text over the image*/
         align-self: flex-end;
+        z-index: 999; /*makes sure images is infront of the image*/
     }
 
 }
@@ -279,10 +302,9 @@ a{
         align-items: center;
         justify-content: flex-start;
         flex-wrap: wrap;
-        justify-content: space-between;
     }
     
-    nav li{
+    nav a{
         padding: 10px;
     }
     
