@@ -82,13 +82,13 @@ nav a{
 
 #banner{
     display: flex;
-    height: 100px;
+    height: 150px;
     background-color: #001c3a; /*dark blue*/
     margin: 0;
 }
 
 #banner h2{
-    font-size: 50px;
+    font-size: 70px;
     justify-content: center;
     color: #ffffff; /*white*/
 }
@@ -274,6 +274,7 @@ a{
         z-index: 999; /*makes sure text is infront of image*/
         position: absolute; 
         align-self: flex-end;
+        background: rgba(13, 45, 79, 0.7);
     }    
     
     
@@ -285,6 +286,7 @@ a{
         position: absolute; /*postions the text over the image*/
         align-self: flex-end;
         z-index: 999; /*makes sure images is infront of the image*/
+        background: rgba(13, 45, 79, 0.7); /*rgba used so the opacity wouldn't affect the actual text*/
     }
 
 }
